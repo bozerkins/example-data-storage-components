@@ -1,11 +1,11 @@
 {
+"name": "bozerkins/example-data-storage-compontents",
     "type": "library",
-    "name": "bozerkins/example-data-storage-compontents",
     "version": "0.0.1",
     "license": "MIT",
     "authors": [
         {
-            "name": "Bogdans Ozerkins",
+            "name": "Bogdans Ozerkins"
         }
     ],
     "require": {
