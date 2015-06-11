@@ -11,8 +11,8 @@ $client->configure(array(
 	'url' => 'http://' . $_SERVER['HTTP_HOST'] . str_replace('server_request.php', 'server.php', $_SERVER['SCRIPT_NAME']),
 ));
 
-$response = $client->execute(array(
-	'test' => 'my test'
+$response = $client->execute('test', array(
+	'test2' => 'my test'
 ));
 
 echo $response;

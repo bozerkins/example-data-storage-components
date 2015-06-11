@@ -12,7 +12,7 @@ class Client
 		return $this;
 	}
 
-	public function execute(array $params = array())
+	public function execute($action, array $params = array())
 	{
 		// Get cURL resource
 		$curl = curl_init();
@@ -23,6 +23,7 @@ class Client
 		    CURLOPT_USERAGENT => 'Codular Sample cURL Request',
 		    CURLOPT_POST => 1,
 		    CURLOPT_POSTFIELDS => http_build_query(array(
+				'action' => $action,
 				'params' => $params
 			), '', '&')
 		));
