@@ -15,6 +15,16 @@ class Model
 		$this->database = DatabaseProvider::make();
 	}
 
+	public function getTable()
+	{
+		return $this->table;
+	}
+
+	public function getConnection()
+	{
+		return $this->database;
+	}
+
 	public function exists($primaryKey)
 	{
 		$where = array();
