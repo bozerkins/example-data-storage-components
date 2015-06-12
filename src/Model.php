@@ -56,7 +56,7 @@ class Model
 		} elseif (is_int($data)) {
 			$data = intval($data);
 		} elseif (is_string($data)) {
-			$data = '\'' . $this->database->quote($data) . '\'';
+			$data = $this->database->quote($data);
 		}
 		return $data;
 	}
