@@ -45,12 +45,16 @@ class Model
 		return $this->database->query("SELECT * FROM {$this->table} WHERE " . implode(' AND ', $where))->fetchOne();
 	}
 
-	public function createQuery(array $record)
+	public function createQuery(array $record, $ignore = false)
 	{
 		$fields = implode("`, `", array_keys($record));
 		$values = implode(", ", $this->quote($record));
 
-		return $this->database->query("INSERT INTO `{$this->table}` (`{$fields}`) VALUES ({$values})");
+		$igoneSql = '';
+		if ($ignore) {
+			$ignoreSql = ' IGNORE ';
+		}
+		return $this->database->query("INSERT {$ignoreSql} INTO `{$this->table}` (`{$fields}`) VALUES ({$values})");
 	}
 
 	protected function quote($data)
