@@ -2,7 +2,7 @@
 
 namespace DataStorageComponent;
 
-use Database\DatabaseProvider;
+use DataStorageComponent\Database\DatabaseProvider;
 
 class Model
 {
