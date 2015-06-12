@@ -22,4 +22,9 @@ class DatabaseQuery
 	{
 		return $this->connection->query($sql);
 	}
+
+	public function quote($string)
+	{
+		return $this->connection->quote($string);
+	}
 }
